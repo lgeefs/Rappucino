@@ -15,6 +15,7 @@
 		687D208E20CF4DA800E7A256 /* FinishedRecording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D208D20CF4DA800E7A256 /* FinishedRecording.swift */; };
 		687D209020CF4DEF00E7A256 /* PlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D208F20CF4DEF00E7A256 /* PlayerService.swift */; };
 		687D209220CF503100E7A256 /* AudioFileMerger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D209120CF503100E7A256 /* AudioFileMerger.swift */; };
+		687D209420D063B400E7A256 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 687D209320D063B400E7A256 /* Default-568h@2x.png */; };
 		68AC835220C1105C005638F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AC835120C1105C005638F9 /* AppDelegate.swift */; };
 		68AC835420C1105C005638F9 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AC835320C1105C005638F9 /* FirstViewController.swift */; };
 		68AC835620C1105C005638F9 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AC835520C1105C005638F9 /* SecondViewController.swift */; };
@@ -57,6 +58,8 @@
 		687D208D20CF4DA800E7A256 /* FinishedRecording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedRecording.swift; sourceTree = "<group>"; };
 		687D208F20CF4DEF00E7A256 /* PlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerService.swift; sourceTree = "<group>"; };
 		687D209120CF503100E7A256 /* AudioFileMerger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFileMerger.swift; sourceTree = "<group>"; };
+		687D209320D063B400E7A256 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		687D209520D064F400E7A256 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68AC834E20C1105C005638F9 /* Rappucino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rappucino.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68AC835120C1105C005638F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68AC835320C1105C005638F9 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -64,7 +67,6 @@
 		68AC835820C1105C005638F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		68AC835A20C1105E005638F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68AC835D20C1105E005638F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		68AC835F20C1105F005638F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68AC836420C1105F005638F9 /* RappucinoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RappucinoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68AC836820C1105F005638F9 /* RappucinoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RappucinoTests.swift; sourceTree = "<group>"; };
 		68AC836A20C1105F005638F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 		68AC834520C1105C005638F9 = {
 			isa = PBXGroup;
 			children = (
+				687D209320D063B400E7A256 /* Default-568h@2x.png */,
 				68AC835020C1105C005638F9 /* Rappucino */,
 				68AC836720C1105F005638F9 /* RappucinoTests */,
 				68AC837220C1105F005638F9 /* RappucinoUITests */,
@@ -193,7 +196,7 @@
 				68AC835A20C1105E005638F9 /* Assets.xcassets */,
 				68AC835C20C1105E005638F9 /* LaunchScreen.storyboard */,
 				68AC838120C31083005638F9 /* GoogleService-Info.plist */,
-				68AC835F20C1105F005638F9 /* Info.plist */,
+				687D209520D064F400E7A256 /* Info.plist */,
 			);
 			path = Rappucino;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				68AC835E20C1105E005638F9 /* LaunchScreen.storyboard in Resources */,
 				68AC838220C31083005638F9 /* GoogleService-Info.plist in Resources */,
 				68AC835B20C1105E005638F9 /* Assets.xcassets in Resources */,
+				687D209420D063B400E7A256 /* Default-568h@2x.png in Resources */,
 				68AC835920C1105C005638F9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
