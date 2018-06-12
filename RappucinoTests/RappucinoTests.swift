@@ -22,6 +22,10 @@ class RappucinoTests: XCTestCase {
     }
     
     func testExample() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let fv = (storyboard.instantiateInitialViewController() as! UITabBarController).viewControllers?.first as! FirstViewController
+        let _ = fv.view
+        XCTAssertEqual(fv.recordButton.titleLabel?.text, "Button")
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }

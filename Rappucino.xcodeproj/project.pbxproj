@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		429DE9935C40A57E5066AE33 /* Pods_RappucinoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684A73323B2A144E4A1072E0 /* Pods_RappucinoUITests.framework */; };
+		687D208120C680C600E7A256 /* RecordingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D208020C680C500E7A256 /* RecordingService.swift */; };
+		687D208320C681D000E7A256 /* Clip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D208220C681D000E7A256 /* Clip.swift */; };
+		687D208520C6826500E7A256 /* RawRecording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D208420C6826500E7A256 /* RawRecording.swift */; };
+		687D208A20C75CA100E7A256 /* AssetExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D208920C75CA100E7A256 /* AssetExporter.swift */; };
+		687D208E20CF4DA800E7A256 /* FinishedRecording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D208D20CF4DA800E7A256 /* FinishedRecording.swift */; };
+		687D209020CF4DEF00E7A256 /* PlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D208F20CF4DEF00E7A256 /* PlayerService.swift */; };
+		687D209220CF503100E7A256 /* AudioFileMerger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D209120CF503100E7A256 /* AudioFileMerger.swift */; };
 		68AC835220C1105C005638F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AC835120C1105C005638F9 /* AppDelegate.swift */; };
 		68AC835420C1105C005638F9 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AC835320C1105C005638F9 /* FirstViewController.swift */; };
 		68AC835620C1105C005638F9 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AC835520C1105C005638F9 /* SecondViewController.swift */; };
@@ -15,6 +23,9 @@
 		68AC835E20C1105E005638F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68AC835C20C1105E005638F9 /* LaunchScreen.storyboard */; };
 		68AC836920C1105F005638F9 /* RappucinoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AC836820C1105F005638F9 /* RappucinoTests.swift */; };
 		68AC837420C1105F005638F9 /* RappucinoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AC837320C1105F005638F9 /* RappucinoUITests.swift */; };
+		68AC838220C31083005638F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68AC838120C31083005638F9 /* GoogleService-Info.plist */; };
+		9B1F6EE7D883BFC2CD7846E1 /* Pods_RappucinoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 886DE3EAF990642859D016A2 /* Pods_RappucinoTests.framework */; };
+		AF6A29D17A880CACF064B4EC /* Pods_Rappucino.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463749F1D5358433A982CF4B /* Pods_Rappucino.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +46,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C645352AF5BBD2482755267 /* Pods-Rappucino.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rappucino.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rappucino/Pods-Rappucino.release.xcconfig"; sourceTree = "<group>"; };
+		319B4F9060FFE41C95F217C8 /* Pods-Rappucino.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rappucino.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rappucino/Pods-Rappucino.debug.xcconfig"; sourceTree = "<group>"; };
+		463749F1D5358433A982CF4B /* Pods_Rappucino.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rappucino.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		684A73323B2A144E4A1072E0 /* Pods_RappucinoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RappucinoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		687D208020C680C500E7A256 /* RecordingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingService.swift; sourceTree = "<group>"; };
+		687D208220C681D000E7A256 /* Clip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clip.swift; sourceTree = "<group>"; };
+		687D208420C6826500E7A256 /* RawRecording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawRecording.swift; sourceTree = "<group>"; };
+		687D208920C75CA100E7A256 /* AssetExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetExporter.swift; sourceTree = "<group>"; };
+		687D208D20CF4DA800E7A256 /* FinishedRecording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedRecording.swift; sourceTree = "<group>"; };
+		687D208F20CF4DEF00E7A256 /* PlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerService.swift; sourceTree = "<group>"; };
+		687D209120CF503100E7A256 /* AudioFileMerger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFileMerger.swift; sourceTree = "<group>"; };
 		68AC834E20C1105C005638F9 /* Rappucino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rappucino.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68AC835120C1105C005638F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68AC835320C1105C005638F9 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +71,12 @@
 		68AC836F20C1105F005638F9 /* RappucinoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RappucinoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68AC837320C1105F005638F9 /* RappucinoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RappucinoUITests.swift; sourceTree = "<group>"; };
 		68AC837520C1105F005638F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68AC838120C31083005638F9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		72413117091975E56A3730C7 /* Pods-RappucinoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RappucinoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RappucinoUITests/Pods-RappucinoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8775174E3EB040BA886DB62B /* Pods-RappucinoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RappucinoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RappucinoUITests/Pods-RappucinoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		886DE3EAF990642859D016A2 /* Pods_RappucinoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RappucinoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBBF278CDF20C18380822F52 /* Pods-RappucinoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RappucinoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RappucinoTests/Pods-RappucinoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F9828FFC4A9C2B5B40D5C970 /* Pods-RappucinoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RappucinoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RappucinoTests/Pods-RappucinoTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF6A29D17A880CACF064B4EC /* Pods_Rappucino.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B1F6EE7D883BFC2CD7846E1 /* Pods_RappucinoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +100,66 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				429DE9935C40A57E5066AE33 /* Pods_RappucinoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F4507F59FE10AA129A4F536 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				463749F1D5358433A982CF4B /* Pods_Rappucino.framework */,
+				886DE3EAF990642859D016A2 /* Pods_RappucinoTests.framework */,
+				684A73323B2A144E4A1072E0 /* Pods_RappucinoUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		490919278DCE1CFF4BCCD317 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				319B4F9060FFE41C95F217C8 /* Pods-Rappucino.debug.xcconfig */,
+				1C645352AF5BBD2482755267 /* Pods-Rappucino.release.xcconfig */,
+				DBBF278CDF20C18380822F52 /* Pods-RappucinoTests.debug.xcconfig */,
+				F9828FFC4A9C2B5B40D5C970 /* Pods-RappucinoTests.release.xcconfig */,
+				8775174E3EB040BA886DB62B /* Pods-RappucinoUITests.debug.xcconfig */,
+				72413117091975E56A3730C7 /* Pods-RappucinoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		687D208620C6828A00E7A256 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				687D208220C681D000E7A256 /* Clip.swift */,
+				687D208420C6826500E7A256 /* RawRecording.swift */,
+				687D208D20CF4DA800E7A256 /* FinishedRecording.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		687D208720C6829B00E7A256 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				68AC835320C1105C005638F9 /* FirstViewController.swift */,
+				68AC835520C1105C005638F9 /* SecondViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		687D208820C682A800E7A256 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				687D208020C680C500E7A256 /* RecordingService.swift */,
+				687D208920C75CA100E7A256 /* AssetExporter.swift */,
+				687D208F20CF4DEF00E7A256 /* PlayerService.swift */,
+				687D209120CF503100E7A256 /* AudioFileMerger.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		68AC834520C1105C005638F9 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +167,8 @@
 				68AC836720C1105F005638F9 /* RappucinoTests */,
 				68AC837220C1105F005638F9 /* RappucinoUITests */,
 				68AC834F20C1105C005638F9 /* Products */,
+				490919278DCE1CFF4BCCD317 /* Pods */,
+				0F4507F59FE10AA129A4F536 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,11 +186,13 @@
 			isa = PBXGroup;
 			children = (
 				68AC835120C1105C005638F9 /* AppDelegate.swift */,
-				68AC835320C1105C005638F9 /* FirstViewController.swift */,
-				68AC835520C1105C005638F9 /* SecondViewController.swift */,
+				687D208720C6829B00E7A256 /* ViewControllers */,
+				687D208820C682A800E7A256 /* Services */,
+				687D208620C6828A00E7A256 /* Models */,
 				68AC835720C1105C005638F9 /* Main.storyboard */,
 				68AC835A20C1105E005638F9 /* Assets.xcassets */,
 				68AC835C20C1105E005638F9 /* LaunchScreen.storyboard */,
+				68AC838120C31083005638F9 /* GoogleService-Info.plist */,
 				68AC835F20C1105F005638F9 /* Info.plist */,
 			);
 			path = Rappucino;
@@ -135,6 +223,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 68AC837820C1105F005638F9 /* Build configuration list for PBXNativeTarget "Rappucino" */;
 			buildPhases = (
+				1A72A01C6C9FFD765D965FE1 /* [CP] Check Pods Manifest.lock */,
 				68AC834A20C1105C005638F9 /* Sources */,
 				68AC834B20C1105C005638F9 /* Frameworks */,
 				68AC834C20C1105C005638F9 /* Resources */,
@@ -152,6 +241,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 68AC837B20C1105F005638F9 /* Build configuration list for PBXNativeTarget "RappucinoTests" */;
 			buildPhases = (
+				06FA7BE12B8791F78CEF2480 /* [CP] Check Pods Manifest.lock */,
 				68AC836020C1105F005638F9 /* Sources */,
 				68AC836120C1105F005638F9 /* Frameworks */,
 				68AC836220C1105F005638F9 /* Resources */,
@@ -170,6 +260,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 68AC837E20C1105F005638F9 /* Build configuration list for PBXNativeTarget "RappucinoUITests" */;
 			buildPhases = (
+				8776D9642CC8A7652AD68B8F /* [CP] Check Pods Manifest.lock */,
 				68AC836B20C1105F005638F9 /* Sources */,
 				68AC836C20C1105F005638F9 /* Frameworks */,
 				68AC836D20C1105F005638F9 /* Resources */,
@@ -233,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68AC835E20C1105E005638F9 /* LaunchScreen.storyboard in Resources */,
+				68AC838220C31083005638F9 /* GoogleService-Info.plist in Resources */,
 				68AC835B20C1105E005638F9 /* Assets.xcassets in Resources */,
 				68AC835920C1105C005638F9 /* Main.storyboard in Resources */,
 			);
@@ -254,13 +346,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06FA7BE12B8791F78CEF2480 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RappucinoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1A72A01C6C9FFD765D965FE1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Rappucino-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8776D9642CC8A7652AD68B8F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RappucinoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		68AC834A20C1105C005638F9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				687D209220CF503100E7A256 /* AudioFileMerger.swift in Sources */,
+				687D208A20C75CA100E7A256 /* AssetExporter.swift in Sources */,
 				68AC835620C1105C005638F9 /* SecondViewController.swift in Sources */,
+				687D208120C680C600E7A256 /* RecordingService.swift in Sources */,
+				687D208320C681D000E7A256 /* Clip.swift in Sources */,
+				687D208E20CF4DA800E7A256 /* FinishedRecording.swift in Sources */,
+				687D209020CF4DEF00E7A256 /* PlayerService.swift in Sources */,
 				68AC835220C1105C005638F9 /* AppDelegate.swift in Sources */,
+				687D208520C6826500E7A256 /* RawRecording.swift in Sources */,
 				68AC835420C1105C005638F9 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,6 +588,7 @@
 		};
 		68AC837920C1105F005638F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 319B4F9060FFE41C95F217C8 /* Pods-Rappucino.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -450,6 +607,7 @@
 		};
 		68AC837A20C1105F005638F9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C645352AF5BBD2482755267 /* Pods-Rappucino.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -468,6 +626,7 @@
 		};
 		68AC837C20C1105F005638F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBBF278CDF20C18380822F52 /* Pods-RappucinoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -489,6 +648,7 @@
 		};
 		68AC837D20C1105F005638F9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9828FFC4A9C2B5B40D5C970 /* Pods-RappucinoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -510,6 +670,7 @@
 		};
 		68AC837F20C1105F005638F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8775174E3EB040BA886DB62B /* Pods-RappucinoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -530,6 +691,7 @@
 		};
 		68AC838020C1105F005638F9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72413117091975E56A3730C7 /* Pods-RappucinoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
