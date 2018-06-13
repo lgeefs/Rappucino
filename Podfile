@@ -6,6 +6,8 @@ target 'Rappucino' do
   use_frameworks!
 
   # Pods for Rappucino
+  
+  pod 'FirebaseAnalytics'
 
   target 'RappucinoTests' do
     inherit! :search_paths

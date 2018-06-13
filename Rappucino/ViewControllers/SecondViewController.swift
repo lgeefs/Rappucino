@@ -10,26 +10,33 @@ import UIKit
 import Foundation
 import AVFoundation
 
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var label: UILabel!
+    
+    var tableView = UITableView()
+    
+    var recordings = [FinishedRecording]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        tableView.backgroundColor = .lightGray
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(RecordingTableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        tableView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height*0.5)
+        
+        view.addSubview(tableView)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let recs = self.getRecordings()
-        
-        DispatchQueue.main.async {
-            self.label.text = recs.first?.name ?? "hello"
-            for i in 0..<recs.count {
-                print(recs[i])
-            }
-        }
-        
+        self.getRecordings()
         
     }
 
@@ -40,7 +47,7 @@ class SecondViewController: UIViewController {
 
     
     
-    private func getRecordings() -> [FinishedRecording] {
+    private func getRecordings() {
         
         let recordingsDirectory = RecordingService.shared.finishedDirectory!
         
@@ -68,7 +75,30 @@ class SecondViewController: UIViewController {
         
         recordings.sort(by: { $0.creationDate!.timeIntervalSince1970 > $1.creationDate!.timeIntervalSince1970 })
         
-        return recordings
+        self.recordings = recordings
+        tableView.reloadData()
+        
+    }
+    
+    /******************************
+    TableView stuff
+    ******************************/
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.recordings.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RecordingTableViewCell
+        
+        cell.recording = self.recordings[indexPath.row]
+        
+        return cell
         
     }
 

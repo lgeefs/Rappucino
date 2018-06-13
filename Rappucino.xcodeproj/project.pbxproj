@@ -16,8 +16,8 @@
 		687D209020CF4DEF00E7A256 /* PlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D208F20CF4DEF00E7A256 /* PlayerService.swift */; };
 		687D209220CF503100E7A256 /* AudioFileMerger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D209120CF503100E7A256 /* AudioFileMerger.swift */; };
 		687D209420D063B400E7A256 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 687D209320D063B400E7A256 /* Default-568h@2x.png */; };
-		687D209A20D0684100E7A256 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 687D209920D0684100E7A256 /* Info.plist */; };
-		687D209E20D068F100E7A256 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 687D209D20D068F100E7A256 /* GoogleService-Info.plist */; };
+		687D20A020D0903A00E7A256 /* FirebaseAnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D209F20D0903A00E7A256 /* FirebaseAnalyticsManager.swift */; };
+		687D20A320D0953400E7A256 /* RecordingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D20A220D0953400E7A256 /* RecordingTableViewCell.swift */; };
 		68AC835220C1105C005638F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AC835120C1105C005638F9 /* AppDelegate.swift */; };
 		68AC835420C1105C005638F9 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AC835320C1105C005638F9 /* FirstViewController.swift */; };
 		68AC835620C1105C005638F9 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AC835520C1105C005638F9 /* SecondViewController.swift */; };
@@ -62,6 +62,8 @@
 		687D209320D063B400E7A256 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		687D209920D0684100E7A256 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		687D209D20D068F100E7A256 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		687D209F20D0903A00E7A256 /* FirebaseAnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAnalyticsManager.swift; sourceTree = "<group>"; };
+		687D20A220D0953400E7A256 /* RecordingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingTableViewCell.swift; sourceTree = "<group>"; };
 		68AC834E20C1105C005638F9 /* Rappucino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rappucino.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68AC835120C1105C005638F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68AC835320C1105C005638F9 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -159,8 +161,17 @@
 				687D208920C75CA100E7A256 /* AssetExporter.swift */,
 				687D208F20CF4DEF00E7A256 /* PlayerService.swift */,
 				687D209120CF503100E7A256 /* AudioFileMerger.swift */,
+				687D209F20D0903A00E7A256 /* FirebaseAnalyticsManager.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		687D20A120D0947100E7A256 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				687D20A220D0953400E7A256 /* RecordingTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		68AC834520C1105C005638F9 = {
@@ -193,6 +204,7 @@
 				687D208720C6829B00E7A256 /* ViewControllers */,
 				687D208820C682A800E7A256 /* Services */,
 				687D208620C6828A00E7A256 /* Models */,
+				687D20A120D0947100E7A256 /* Views */,
 				68AC835720C1105C005638F9 /* Main.storyboard */,
 				68AC835A20C1105E005638F9 /* Assets.xcassets */,
 				68AC835C20C1105E005638F9 /* LaunchScreen.storyboard */,
@@ -231,6 +243,7 @@
 				68AC834A20C1105C005638F9 /* Sources */,
 				68AC834B20C1105C005638F9 /* Frameworks */,
 				68AC834C20C1105C005638F9 /* Resources */,
+				27F90037FF0657609E0E1950 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -328,11 +341,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				68AC835E20C1105E005638F9 /* LaunchScreen.storyboard in Resources */,
-				687D209A20D0684100E7A256 /* Info.plist in Resources */,
 				68AC835B20C1105E005638F9 /* Assets.xcassets in Resources */,
 				687D209420D063B400E7A256 /* Default-568h@2x.png in Resources */,
 				68AC835920C1105C005638F9 /* Main.storyboard in Resources */,
-				687D209E20D068F100E7A256 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +400,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		27F90037FF0657609E0E1950 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Rappucino/Pods-Rappucino-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rappucino/Pods-Rappucino-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8776D9642CC8A7652AD68B8F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -421,9 +452,11 @@
 				687D208320C681D000E7A256 /* Clip.swift in Sources */,
 				687D208E20CF4DA800E7A256 /* FinishedRecording.swift in Sources */,
 				687D209020CF4DEF00E7A256 /* PlayerService.swift in Sources */,
+				687D20A320D0953400E7A256 /* RecordingTableViewCell.swift in Sources */,
 				68AC835220C1105C005638F9 /* AppDelegate.swift in Sources */,
 				687D208520C6826500E7A256 /* RawRecording.swift in Sources */,
 				68AC835420C1105C005638F9 /* FirstViewController.swift in Sources */,
+				687D20A020D0903A00E7A256 /* FirebaseAnalyticsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
