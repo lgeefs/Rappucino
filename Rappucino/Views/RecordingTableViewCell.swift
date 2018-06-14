@@ -26,7 +26,6 @@ class RecordingTableViewCell: UITableViewCell, PlayerServiceDelegate, UITextFiel
     
     var nameTextField: UITextField!
     var playButton: UIButton!
-    var editButton: UIButton!
     var dateLabel: UILabel!
     var durationLabel: UILabel!
     var shareButton: UIButton!
@@ -79,7 +78,7 @@ class RecordingTableViewCell: UITableViewCell, PlayerServiceDelegate, UITextFiel
     
     func setupUI() {
         
-        self.contentView.backgroundColor = .white
+        //self.contentView.backgroundColor = .white
         
         nameTextField = UITextField()
         //nameTextField.textColor = customLightGray
@@ -93,19 +92,14 @@ class RecordingTableViewCell: UITableViewCell, PlayerServiceDelegate, UITextFiel
         playButton.setImage(playImage, for: .normal)
         playButton.contentMode = .scaleAspectFit
         playButton.addTarget(self, action: #selector(playButtonPressed(sender:)), for: .touchUpInside)
-        self.contentView.addSubview(playButton)
-        
-        editButton = UIButton()
-        editButton.setImage(UIImage(), for: .normal)
-        editButton.contentMode = .scaleAspectFit
-        self.contentView.addSubview(editButton)
+        //self.contentView.addSubview(playButton)
         
         dateLabel = UILabel()
         //dateLabel.textColor = customLightGray
         dateLabel.contentMode = .top
         //dateLabel.font = UIFont(name: fontName, size: Fonts.smaller)
         dateLabel.adjustsFontSizeToFitWidth = true
-        self.contentView.addSubview(dateLabel)
+        //self.contentView.addSubview(dateLabel)
         
         durationLabel = UILabel()
         durationLabel.textColor = .white
@@ -113,13 +107,13 @@ class RecordingTableViewCell: UITableViewCell, PlayerServiceDelegate, UITextFiel
         durationLabel.textAlignment = .right
         //durationLabel.font = UIFont(name: fontName, size: Fonts.small)
         durationLabel.adjustsFontSizeToFitWidth = true
-        self.contentView.addSubview(durationLabel)
+        //self.contentView.addSubview(durationLabel)
         
         shareButton = UIButton()
-        shareButton.setImage(UIImage(), for: .normal)
-        shareButton.contentMode = .scaleAspectFit
+        shareButton.setTitle("Share", for: .normal) //shareButton.setImage(UIImage(), for: .normal)
+        //shareButton.contentMode = .scaleAspectFit
         shareButton.addTarget(self, action: #selector(shareButtonPressed(sender:)), for: .touchUpInside)
-        self.contentView.addSubview(shareButton)
+        //self.contentView.addSubview(shareButton)
         
         deleteButton = UIButton()
         deleteButton.setTitle("Delete", for: .normal)
@@ -128,12 +122,12 @@ class RecordingTableViewCell: UITableViewCell, PlayerServiceDelegate, UITextFiel
         deleteButton.titleLabel?.adjustsFontSizeToFitWidth = true
         deleteButton.backgroundColor = .red
         deleteButton.addTarget(self, action: #selector(deleteButtonPressed(sender:)), for: .touchUpInside)
-        self.backgroundView = UIView(frame: contentView.frame)
-        self.backgroundView?.addSubview(deleteButton)
+        //self.backgroundView = UIView(frame: contentView.frame)
+        //self.backgroundView?.addSubview(deleteButton)
         
         timeTicker = UIView()
         timeTicker.backgroundColor = .white
-        self.contentView.addSubview(timeTicker)
+        //self.contentView.addSubview(timeTicker)
         
     }
     
@@ -145,15 +139,11 @@ class RecordingTableViewCell: UITableViewCell, PlayerServiceDelegate, UITextFiel
         let width = self.contentView.bounds.width//*multiplier
         let height = self.contentView.bounds.height
         let leftMargin = width*0.1
-        let topMargin = height*0.15
+        let topMargin = height*0.05
         
-        nameTextField.frame = CGRect(x: leftMargin, y: topMargin, width: width*0.7, height: height*0.15)
-        
-        self.contentView.frame = CGRect(x: leftMargin, y: nameTextField.frame.maxY, width: width*0.8, height: height*0.5)
+        nameTextField.frame = CGRect(x: leftMargin, y: topMargin, width: width*0.7, height: height*0.5)
         
         playButton.frame = CGRect(x: self.contentView.bounds.width*0.06, y: self.contentView.bounds.height*0.5-self.contentView.frame.size.height*0.25, width: self.contentView.bounds.width*0.06, height: self.self.contentView.frame.size.height*0.5)
-        
-        editButton.frame = CGRect(x: self.contentView.bounds.width*0.825, y: self.contentView.bounds.height*0.5-self.contentView.frame.size.height*0.5, width: self.contentView.bounds.width*0.175, height: self.contentView.frame.size.height*1)
         
         dateLabel.frame = CGRect(x: leftMargin, y: self.contentView.frame.maxY-((self.contentView.bounds.height-self.contentView.frame.size.height)*0.1), width: width*0.65, height: height*0.1)
         
@@ -161,7 +151,7 @@ class RecordingTableViewCell: UITableViewCell, PlayerServiceDelegate, UITextFiel
         
         shareButton.frame = CGRect(x: self.contentView.frame.maxX, y: 0, width: self.bounds.width-self.contentView.frame.maxX, height: height)
         
-        deleteButton.frame = CGRect(x: self.backgroundView!.bounds.width*0.75, y: 0, width: self.backgroundView!.bounds.width*0.25, height: self.backgroundView!.bounds.height)
+        //deleteButton.frame = CGRect(x: self.backgroundView!.bounds.width*0.75, y: 0, width: self.backgroundView!.bounds.width*0.25, height: self.backgroundView!.bounds.height)
         
         timeTicker.frame = CGRect(x: 0, y: 0, width: 1, height: self.contentView.frame.size.height)
         
@@ -310,12 +300,12 @@ class RecordingTableViewCell: UITableViewCell, PlayerServiceDelegate, UITextFiel
         
     }
     
-    override func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+    /*override func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         if touch.view! is UIButton {
             return false
         } else {
             return true
         }
-    }
+    }*/
     
 }

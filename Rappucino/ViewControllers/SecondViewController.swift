@@ -26,6 +26,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(RecordingTableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.rowHeight = 100
         
         tableView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height*0.5)
         
@@ -99,6 +100,14 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.recording = self.recordings[indexPath.row]
         
         return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let r = self.recordings[indexPath.row]
+        
+        PlayerService.shared.play(recording: r)
         
     }
 
