@@ -110,6 +110,17 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         PlayerService.shared.play(recording: r)
         
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            let r = tableView.cellForRow(at: indexPath) as! RecordingTableViewCell
+            r.deleteButtonPressed(sender: UIButton())
+            self.recordings.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        
+    }
 
 }
 

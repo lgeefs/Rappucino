@@ -115,6 +115,8 @@ class RecordingTableViewCell: UITableViewCell, PlayerServiceDelegate, UITextFiel
         shareButton.addTarget(self, action: #selector(shareButtonPressed(sender:)), for: .touchUpInside)
         //self.contentView.addSubview(shareButton)
         
+        /*
+         
         deleteButton = UIButton()
         deleteButton.setTitle("Delete", for: .normal)
         deleteButton.setTitleColor(.white, for: .normal)
@@ -124,6 +126,8 @@ class RecordingTableViewCell: UITableViewCell, PlayerServiceDelegate, UITextFiel
         deleteButton.addTarget(self, action: #selector(deleteButtonPressed(sender:)), for: .touchUpInside)
         //self.backgroundView = UIView(frame: contentView.frame)
         //self.backgroundView?.addSubview(deleteButton)
+ 
+        */
         
         timeTicker = UIView()
         timeTicker.backgroundColor = .white
@@ -198,6 +202,7 @@ class RecordingTableViewCell: UITableViewCell, PlayerServiceDelegate, UITextFiel
         
     }
     
+    /*
     func showDeleteButton(gesture: UISwipeGestureRecognizer?) {
         
         UIView.animate(withDuration: 0.25) {
@@ -213,17 +218,16 @@ class RecordingTableViewCell: UITableViewCell, PlayerServiceDelegate, UITextFiel
         }
         
     }
+    */
     
     @objc func deleteButtonPressed(sender: UIButton) {
         PlayerService.shared.pause()
-        hideDeleteButton(gesture: sender)
+        //hideDeleteButton(gesture: sender)
         RecordingService.shared.delete(recording: self.recording)
         UserDefaults.standard.setValue(nil, forKey: self.recording.name)
         UserDefaults.standard.setValue(nil, forKey: "\(self.recording.name)isnew")
         UserDefaults.standard.synchronize()
     RecordingService.shared.deleteAllRecordings(RecordingService.shared.clipsDirectory.appendingPathComponent(self.recording.name, isDirectory: true), deleteDirectory: true)
-        
-        FirebaseAnalyticsManager.shared.soundbiteDeleted()
         
     }
     

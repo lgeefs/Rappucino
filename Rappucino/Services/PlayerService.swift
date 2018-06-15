@@ -91,9 +91,11 @@ class PlayerService: NSObject, AVAudioPlayerDelegate {
     
     fileprivate func setupPlayer() {
         
-        var headphonesPluggedIn = false
-        
         let session = AVAudioSession.sharedInstance()
+        
+        /*
+        
+        var headphonesPluggedIn = false
         
         let currentRoute = session.currentRoute
         
@@ -104,16 +106,20 @@ class PlayerService: NSObject, AVAudioPlayerDelegate {
                 }
             }
         }
+ 
+        */
         
         do {
             
-            try session.setCategory(AVAudioSessionCategoryPlayAndRecord, with: .mixWithOthers)
-            
+            /*
+             
             if !headphonesPluggedIn {
-                
-                try session.overrideOutputAudioPort(AVAudioSessionPortOverride.speaker)
-                
+                try session.setCategory(AVAudioSessionCategoryPlayAndRecord, with: .defaultToSpeaker)
             }
+             
+            */
+ 
+            try session.setCategory(AVAudioSessionCategoryPlayAndRecord, with: AVAudioSessionCategoryOptions.defaultToSpeaker)
             
             try session.setActive(true)
             
@@ -127,7 +133,7 @@ class PlayerService: NSObject, AVAudioPlayerDelegate {
             player.volume = 1.0
             player.prepareToPlay()
             player.play()
-            //FirebaseAnalyticsManager.shared.soundbitePlayed(duration: currentRecording.duration, soundbiteName: currentRecording.name)
+            FirebaseAnalyticsManager.shared.recordingPlayed(duration: currentRecording.duration, recordingName: currentRecording.name)
         } catch let error {
             print(error.localizedDescription)
         }

@@ -181,6 +181,7 @@ class RecordingService: NSObject, AVAudioRecorderDelegate {
             
             do {
                 try fileManager.removeItem(at: URL(fileURLWithPath: url.path))
+                FirebaseAnalyticsManager.shared.recordingDeleted(recordingName: recording.name ?? "No Name")
             } catch let error {
                 print("Failed")
                 print(error.localizedDescription)
@@ -350,7 +351,7 @@ class RecordingService: NSObject, AVAudioRecorderDelegate {
         let session = AVAudioSession.sharedInstance()
         
         do {
-            try session.setCategory(AVAudioSessionCategoryPlayAndRecord, with: .mixWithOthers)
+            try session.setCategory(AVAudioSessionCategoryPlayAndRecord, with: .defaultToSpeaker)
         } catch let error {
             print("could not set session category")
             print(error.localizedDescription)

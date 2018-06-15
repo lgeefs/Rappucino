@@ -22,21 +22,21 @@ class FirebaseAnalyticsManager {
         Analytics.logEvent(name, parameters: parameters)
     }
     
-    func soundbiteSaved(duration: Double, numberOfBits: Int, soundbiteName: String) {
+    func recordingSaved(duration: Double, numberOfClips: Int, recordingName: String) {
         
-        log("SoundbiteSaved", ["Duration":duration as NSObject, "NumberOfBits":numberOfBits as NSObject, "SoundbiteName":soundbiteName as NSObject])
-        
-    }
-    
-    func soundbiteDeleted() {
-        
-        log("SoundbiteDeleted", [:])
+        log("RecordingSaved", ["Duration":duration as NSObject, "NumberOfClips":numberOfClips as NSObject, "RecordingName":recordingName as NSObject])
         
     }
     
-    func soundbitePlayed(duration: Double, soundbiteName: String?) {
+    func recordingDeleted(recordingName: String) {
         
-        log("SoundbitePlayed", ["Duration":duration as NSObject, "SoundbiteName":soundbiteName as NSObject? ?? "nil" as NSObject])
+        log("RecordingDeleted", ["RecordingName":recordingName as NSObject])
+        
+    }
+    
+    func recordingPlayed(duration: Double, recordingName: String?) {
+        
+        log("RecordingPlayed", ["Duration":duration as NSObject, "RecordingName":recordingName as NSObject? ?? "nil" as NSObject])
         
     }
     
