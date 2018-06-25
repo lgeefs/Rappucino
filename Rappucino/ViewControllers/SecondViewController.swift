@@ -6,8 +6,8 @@
 //  Copyright © 2018 logangeefs. All rights reserved.
 //
 
-import UIKit
 import Foundation
+import UIKit
 import AVFoundation
 
 class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {

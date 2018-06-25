@@ -27,6 +27,13 @@
 		68AC835E20C1105E005638F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68AC835C20C1105E005638F9 /* LaunchScreen.storyboard */; };
 		68AC836920C1105F005638F9 /* RappucinoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AC836820C1105F005638F9 /* RappucinoTests.swift */; };
 		68AC837420C1105F005638F9 /* RappucinoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AC837320C1105F005638F9 /* RappucinoUITests.swift */; };
+		68CB30D920DC717200A97AEC /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CB30D820DC717200A97AEC /* Api.swift */; };
+		68CB30DB20DCDF2000A97AEC /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CB30DA20DCDF2000A97AEC /* ThirdViewController.swift */; };
+		68CB30DD20DCE1E100A97AEC /* Rapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CB30DC20DCE1E100A97AEC /* Rapper.swift */; };
+		68CB30DF20DCE31200A97AEC /* Squad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CB30DE20DCE31200A97AEC /* Squad.swift */; };
+		68CB30E120DCEB9300A97AEC /* SquadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CB30E020DCEB9300A97AEC /* SquadTableViewCell.swift */; };
+		68CB30E320DD994C00A97AEC /* SquadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CB30E220DD994C00A97AEC /* SquadViewController.swift */; };
+		68CB30E520DD9DB700A97AEC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CB30E420DD9DB700A97AEC /* LoginViewController.swift */; };
 		9B1F6EE7D883BFC2CD7846E1 /* Pods_RappucinoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 886DE3EAF990642859D016A2 /* Pods_RappucinoTests.framework */; };
 		AF6A29D17A880CACF064B4EC /* Pods_Rappucino.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463749F1D5358433A982CF4B /* Pods_Rappucino.framework */; };
 /* End PBXBuildFile section */
@@ -78,6 +85,13 @@
 		68AC836F20C1105F005638F9 /* RappucinoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RappucinoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68AC837320C1105F005638F9 /* RappucinoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RappucinoUITests.swift; sourceTree = "<group>"; };
 		68AC837520C1105F005638F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68CB30D820DC717200A97AEC /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		68CB30DA20DCDF2000A97AEC /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		68CB30DC20DCE1E100A97AEC /* Rapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rapper.swift; sourceTree = "<group>"; };
+		68CB30DE20DCE31200A97AEC /* Squad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Squad.swift; sourceTree = "<group>"; };
+		68CB30E020DCEB9300A97AEC /* SquadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadTableViewCell.swift; sourceTree = "<group>"; };
+		68CB30E220DD994C00A97AEC /* SquadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadViewController.swift; sourceTree = "<group>"; };
+		68CB30E420DD9DB700A97AEC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		72413117091975E56A3730C7 /* Pods-RappucinoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RappucinoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RappucinoUITests/Pods-RappucinoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8775174E3EB040BA886DB62B /* Pods-RappucinoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RappucinoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RappucinoUITests/Pods-RappucinoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		886DE3EAF990642859D016A2 /* Pods_RappucinoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RappucinoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +156,8 @@
 				687D208220C681D000E7A256 /* Clip.swift */,
 				687D208420C6826500E7A256 /* RawRecording.swift */,
 				687D208D20CF4DA800E7A256 /* FinishedRecording.swift */,
+				68CB30DC20DCE1E100A97AEC /* Rapper.swift */,
+				68CB30DE20DCE31200A97AEC /* Squad.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -149,8 +165,11 @@
 		687D208720C6829B00E7A256 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				68CB30E420DD9DB700A97AEC /* LoginViewController.swift */,
 				68AC835320C1105C005638F9 /* FirstViewController.swift */,
 				68AC835520C1105C005638F9 /* SecondViewController.swift */,
+				68CB30DA20DCDF2000A97AEC /* ThirdViewController.swift */,
+				68CB30E220DD994C00A97AEC /* SquadViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -163,6 +182,7 @@
 				687D208F20CF4DEF00E7A256 /* PlayerService.swift */,
 				687D209120CF503100E7A256 /* AudioFileMerger.swift */,
 				687D209F20D0903A00E7A256 /* FirebaseAnalyticsManager.swift */,
+				68CB30D820DC717200A97AEC /* Api.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -171,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				687D20A220D0953400E7A256 /* RecordingTableViewCell.swift */,
+				68CB30E020DCEB9300A97AEC /* SquadTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -451,13 +472,20 @@
 				687D208A20C75CA100E7A256 /* AssetExporter.swift in Sources */,
 				68AC835620C1105C005638F9 /* SecondViewController.swift in Sources */,
 				687D208120C680C600E7A256 /* RecordingService.swift in Sources */,
+				68CB30E520DD9DB700A97AEC /* LoginViewController.swift in Sources */,
+				68CB30DF20DCE31200A97AEC /* Squad.swift in Sources */,
+				68CB30E120DCEB9300A97AEC /* SquadTableViewCell.swift in Sources */,
 				687D208320C681D000E7A256 /* Clip.swift in Sources */,
 				687D208E20CF4DA800E7A256 /* FinishedRecording.swift in Sources */,
+				68CB30D920DC717200A97AEC /* Api.swift in Sources */,
 				687D209020CF4DEF00E7A256 /* PlayerService.swift in Sources */,
 				687D20A320D0953400E7A256 /* RecordingTableViewCell.swift in Sources */,
 				68AC835220C1105C005638F9 /* AppDelegate.swift in Sources */,
+				68CB30DB20DCDF2000A97AEC /* ThirdViewController.swift in Sources */,
 				687D208520C6826500E7A256 /* RawRecording.swift in Sources */,
 				68AC835420C1105C005638F9 /* FirstViewController.swift in Sources */,
+				68CB30E320DD994C00A97AEC /* SquadViewController.swift in Sources */,
+				68CB30DD20DCE1E100A97AEC /* Rapper.swift in Sources */,
 				687D20A020D0903A00E7A256 /* FirebaseAnalyticsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,6 +6,7 @@
 //  Copyright © 2018 logangeefs. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import WebKit
 
@@ -15,6 +16,10 @@ class FirstViewController: UIViewController, MeterDelegate {
     
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var finishButton: UIButton!
+    
+    var default_query: String = {
+        return UserDefaults.standard.string(forKey: "default_query") ?? ""
+    }()
     
     let alertController = UIAlertController(title: "Save", message: "Title of clip", preferredStyle: .alert)
     
@@ -51,6 +56,7 @@ class FirstViewController: UIViewController, MeterDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        layoutUI()
         
     }
 
@@ -68,6 +74,9 @@ class FirstViewController: UIViewController, MeterDelegate {
         
         self.view.addSubview(webView)
         
+        recordButton.titleLabel?.font = UIFont.systemFont(ofSize: 24)
+        finishButton.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+        
         recordButton.addTarget(self, action: #selector(recordButtonTouched(sender:)), for: .touchDown)
         recordButton.addTarget(self, action: #selector(recordButtonUntouched(sender:)), for: [.touchUpInside, .touchUpOutside])
         
@@ -77,9 +86,26 @@ class FirstViewController: UIViewController, MeterDelegate {
     
     func loadWebview() {
         
-        let myURL = URL(string: "https://www.youtube.com")
+        let myURL = URL(string: "https://www.youtube.com" + default_query)
         let youtubeRequest = URLRequest(url: myURL!)
         webView.load(youtubeRequest)
+        
+    }
+    
+    func layoutUI() {
+        
+        // simple vars
+        let w = view.bounds.width
+        let h = view.bounds.height
+        
+        // button diameter
+        let bd = w*0.4
+        
+        recordButton.frame = CGRect(x: w*0.1, y: h*0.66, width: bd, height: bd)
+        recordButton.layer.cornerRadius = recordButton.frame.width*0.5
+        
+        finishButton.frame = CGRect(x: w*0.9-bd*0.75, y: h*0.66 + bd*0.125, width: bd*0.75, height: bd*0.75)
+        finishButton.layer.cornerRadius = finishButton.frame.width*0.5
         
     }
 
@@ -219,9 +245,7 @@ class FirstViewController: UIViewController, MeterDelegate {
                     }
                     
                 }
-                
-                self?.title = "Lets goooo"
-                
+                                
             }
             
         }

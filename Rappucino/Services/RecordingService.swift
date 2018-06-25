@@ -212,6 +212,7 @@ class RecordingService: NSObject, AVAudioRecorderDelegate {
                     self.audioRecorder = nil
                     UserDefaults.standard.set(true, forKey: "\(outputURL.deletingPathExtension().lastPathComponent)isnew")
                     UserDefaults.standard.synchronize()
+                    Api.shared.upload_recording(fileURL: outputURL)
                     
                 }
                 

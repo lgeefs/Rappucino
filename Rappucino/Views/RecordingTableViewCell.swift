@@ -33,7 +33,7 @@ class RecordingTableViewCell: UITableViewCell, PlayerServiceDelegate, UITextFiel
     var deleteButton: UIButton!
     
     var timeTicker: UIView!
-    var timer: Timer!
+    //var timer: Timer!
     
     var index: Int! {
         didSet {
@@ -99,15 +99,15 @@ class RecordingTableViewCell: UITableViewCell, PlayerServiceDelegate, UITextFiel
         dateLabel.contentMode = .top
         //dateLabel.font = UIFont(name: fontName, size: Fonts.smaller)
         dateLabel.adjustsFontSizeToFitWidth = true
-        //self.contentView.addSubview(dateLabel)
+        self.contentView.addSubview(dateLabel)
         
         durationLabel = UILabel()
-        durationLabel.textColor = .white
+        durationLabel.textColor = .black
         durationLabel.contentMode = .top
         durationLabel.textAlignment = .right
         //durationLabel.font = UIFont(name: fontName, size: Fonts.small)
         durationLabel.adjustsFontSizeToFitWidth = true
-        //self.contentView.addSubview(durationLabel)
+        self.contentView.addSubview(durationLabel)
         
         shareButton = UIButton()
         shareButton.setTitle("Share", for: .normal) //shareButton.setImage(UIImage(), for: .normal)
@@ -149,7 +149,7 @@ class RecordingTableViewCell: UITableViewCell, PlayerServiceDelegate, UITextFiel
         
         playButton.frame = CGRect(x: self.contentView.bounds.width*0.06, y: self.contentView.bounds.height*0.5-self.contentView.frame.size.height*0.25, width: self.contentView.bounds.width*0.06, height: self.self.contentView.frame.size.height*0.5)
         
-        dateLabel.frame = CGRect(x: leftMargin, y: self.contentView.frame.maxY-((self.contentView.bounds.height-self.contentView.frame.size.height)*0.1), width: width*0.65, height: height*0.1)
+        dateLabel.frame = CGRect(x: leftMargin, y: nameTextField.frame.maxY, width: width*0.65, height: height*0.2)
         
         durationLabel.frame = CGRect(x: self.contentView.bounds.width*0.5, y: 0, width: self.contentView.bounds.width*0.3, height: self.contentView.bounds.height)
         
@@ -177,18 +177,18 @@ class RecordingTableViewCell: UITableViewCell, PlayerServiceDelegate, UITextFiel
             PlayerService.shared.play(recording: self.recording)
             PlayerService.shared.delegate = self
             playButton.setImage(pauseImage, for: .normal)
-            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(moveTimeTick(timer:)), userInfo: nil, repeats: true)
+            //timer = .scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(moveTimeTick(timer:)), userInfo: nil, repeats: true)
         } else {
             PlayerService.shared.pause()
             playButton.setImage(playImage, for: .normal)
-            timer.invalidate()
+            //timer.invalidate()
         }
         
     }
     
     func finishedPlaying() {
-        timer.invalidate()
-        timer = nil
+        //timer.invalidate()
+        //timer = nil
         playButton.setImage(playImage, for: .normal)
     }
     
@@ -270,7 +270,7 @@ class RecordingTableViewCell: UITableViewCell, PlayerServiceDelegate, UITextFiel
         } else {
             playButton.setImage(playImage, for: .normal)
         }
-        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(moveTimeTick(timer:)), userInfo: nil, repeats: true)
+        //timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(moveTimeTick(timer:)), userInfo: nil, repeats: true)
         
     }
     
@@ -304,12 +304,13 @@ class RecordingTableViewCell: UITableViewCell, PlayerServiceDelegate, UITextFiel
         
     }
     
-    /*override func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        if touch.view! is UIButton {
+    override func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        /*if touch.view! is UIButton {
             return false
         } else {
             return true
-        }
-    }*/
+        }*/
+        return true
+    }
     
 }

@@ -18,6 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        if UserDefaults.standard.string(forKey: "rapper_id") == nil {
+            if window != nil {
+                window?.makeKeyAndVisible()
+                window?.rootViewController?.present(LoginViewController(), animated: true, completion: nil)
+            }
+        }
+        
         FirebaseAnalyticsManager.shared.configure()
         
         do {
