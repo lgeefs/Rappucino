@@ -112,15 +112,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @objc func loginButtonPressed(sender: UIButton) {
         
-        if nameTextField.text!.count > 0 {
-            //register
-        } else {
-            //login
-        }
+        let name = nameTextField.text ?? ""
+        let handle = handleTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
         
-        print(nameTextField.text!)
-        print(handleTextField.text!)
-        print(passwordTextField.text!)
+        if name.count > 0 {
+            Api.shared.register(name: name, handle: handle, password: password) { _ in
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        } else {
+            Api.shared.login(handle: handle, password: password) { success in
+                print(success)
+                if success {
+                    DispatchQueue.main.async {
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                }
+            }
+        }
         
     }
     

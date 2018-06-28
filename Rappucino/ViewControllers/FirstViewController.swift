@@ -70,7 +70,7 @@ class FirstViewController: UIViewController, MeterDelegate {
         let webKitConfig = WKWebViewConfiguration()
         webKitConfig.allowsInlineMediaPlayback = true
         
-        webView = WKWebView(frame: CGRect(x: 0, y: navigationController?.navigationBar.frame.height ?? 20, width: view.bounds.width, height: view.bounds.height*0.5), configuration: webKitConfig)
+        webView = WKWebView(frame: CGRect(x: 0, y: navigationController?.navigationBar.frame.height ?? 20, width: view.bounds.width, height: view.bounds.height*0.6), configuration: webKitConfig)
         
         self.view.addSubview(webView)
         
@@ -81,6 +81,9 @@ class FirstViewController: UIViewController, MeterDelegate {
         recordButton.addTarget(self, action: #selector(recordButtonUntouched(sender:)), for: [.touchUpInside, .touchUpOutside])
         
         finishButton.addTarget(self, action: #selector(finishButtonPressed(sender:)), for: .touchUpInside)
+        
+        //self.view.bringSubview(toFront: recordButton)
+        //self.view.bringSubview(toFront: finishButton)
         
     }
     

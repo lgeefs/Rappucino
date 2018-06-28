@@ -11,6 +11,7 @@ import Foundation
 fileprivate struct Path {
     static let domain = URL(string: "http://127.0.0.1/rappucino")
     static let login = domain?.appendingPathComponent("login").appendingPathExtension("php")
+    static let register = domain?.appendingPathComponent("register").appendingPathExtension("php")
     static let upload = domain?.appendingPathComponent("upload_recording").appendingPathExtension("php")
     static let create_squad = domain?.appendingPathComponent("create_squad").appendingPathExtension("php")
     static let get_squads = domain?.appendingPathComponent("get_squads").appendingPathExtension("php")
@@ -67,24 +68,14 @@ class Api: NSObject, URLSessionDelegate {
         
     }
     
-    private func createPostRequest(path: URL, json: [String: Any]?) -> URLRequest {
+    private func createPostRequest(path: URL, json: String?) -> URLRequest {
         
         var request: URLRequest!
         
         request = URLRequest(url: path)
         
-        if json != nil {
-            
-            do {
-                
-                let json_data = try JSONSerialization.data(withJSONObject: json!, options: .prettyPrinted)
-                
-                request.httpBody = json_data
-                
-            } catch let error {
-                print(error.localizedDescription)
-            }
-            
+        if let json = json as? String {
+            request.httpBody = json.data(using: .utf8)
         }
         
         request.httpMethod = "POST"
@@ -93,21 +84,73 @@ class Api: NSObject, URLSessionDelegate {
         
     }
     
-    func login(handle: String, password: String, completion: (_ success: Bool) -> Void) {
+    func login(handle: String, password: String, completion: @escaping (_ success: Bool) -> Void) {
         
         if let url = Path.login {
             
-            let json = [
-                "handle" : handle,
-                "password" : password
-                ] as [String: Any]
+            let json = "handle=\(handle)&password=\(password)"
             
             let request = createPostRequest(path: url, json: json)
             
             dataTask(request) {
                 object in
                 
-                print(object)
+                if let obj = object as? [String: AnyObject] {
+                    if let success = obj["success"] as? Bool {
+                        if success {
+                            if let rapper_id = obj["rapper_id"] as? String {
+                                UserDefaults.standard.setValue(rapper_id, forKey: "rapper_id")
+                                completion(true)
+                            } else {
+                                completion(false)
+                            }
+                        } else {
+                            completion(false)
+                        }
+                    } else {
+                        completion(false)
+                    }
+                } else {
+                    completion(false)
+                }
+                
+            }
+            
+        } else {
+            completion(false)
+        }
+        
+    }
+    
+    func register(name: String, handle: String, password: String, completion: @escaping (_ success: Bool) -> Void) {
+        
+        if let url = Path.register {
+            
+            let json = "name=\(name)&handle=\(handle)&password=\(password)"
+            
+            let request = createPostRequest(path: url, json: json)
+            
+            dataTask(request) {
+                object in
+                
+                if let obj = object as? [String: AnyObject] {
+                    if let success = obj["success"] as? Bool {
+                        if success {
+                            if let rapper_id = obj["rapper_id"] as? String {
+                                UserDefaults.standard.setValue(rapper_id, forKey: "rapper_id")
+                                completion(true)
+                            } else {
+                                completion(false)
+                            }
+                        } else {
+                            completion(false)
+                        }
+                    } else {
+                        completion(false)
+                    }
+                } else {
+                    completion(false)
+                }
                 
             }
             
@@ -125,7 +168,11 @@ class Api: NSObject, URLSessionDelegate {
             
             request.httpMethod = "POST"
             
-            let parameters : [String: Any] = ["user_id" : "lgeefs96"]
+            let parameters : [String: Any] = [
+                "from_rapper_id" : "lgeefs96",
+                "to_rapper_id" : "jimmyjurner",
+                "to_squad_id" : "wobblypops"
+            ]
             
             let boundary = generateBoundaryString()
             
@@ -208,11 +255,8 @@ class Api: NSObject, URLSessionDelegate {
         
         if let url = Path.create_squad {
             
-            let json = [
-                "name" : squad.getName(),
-                "rappers" : squad.getRappers(),
-                "picture_url" : squad.getPictureURL()?.absoluteString
-                ] as [String : Any]
+            /*let json = [
+                "name=\(squad.getName())&rappers=\(squad.getRappers())&picture_url=\(squad.getPictureURL()?.absoluteString ?? "")"
             
             let request = createPostRequest(path: url, json: json)
             
@@ -221,7 +265,7 @@ class Api: NSObject, URLSessionDelegate {
                 
                 print(object)
                 
-            }
+            }*/
             
         }
         
