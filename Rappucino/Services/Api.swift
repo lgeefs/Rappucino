@@ -74,7 +74,7 @@ class Api: NSObject, URLSessionDelegate {
         
         request = URLRequest(url: path)
         
-        if let json = json as? String {
+        if let json = json {
             request.httpBody = json.data(using: .utf8)
         }
         

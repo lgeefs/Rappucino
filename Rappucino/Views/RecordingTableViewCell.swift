@@ -81,7 +81,7 @@ class RecordingTableViewCell: UITableViewCell, PlayerServiceDelegate, UITextFiel
         //self.contentView.backgroundColor = .white
         
         nameTextField = UITextField()
-        //nameTextField.textColor = customLightGray
+        nameTextField.textColor = .black
         //nameTextField.font = UIFont(name: fontName, size: Fonts.large)
         nameTextField.adjustsFontSizeToFitWidth = true
         nameTextField.delegate = self

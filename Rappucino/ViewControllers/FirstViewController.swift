@@ -47,9 +47,7 @@ class FirstViewController: UIViewController, MeterDelegate {
         setupUI()
         loadWebview()
         setupAlertController() //only call this once! will crash if initialized twice
-        
-        RecordingService.shared.setSessionAndRecord()
-        RecordingService.shared.delegate = self
+        setupRecordingSession()
         
     }
     
@@ -202,26 +200,17 @@ class FirstViewController: UIViewController, MeterDelegate {
             
             if let textField = self?.alertController.textFields?.first {
                 
-                var filename = "\(textField.text!).m4a"
+                var filename = (textField.text?.count)! > 0 ? "\(textField.text!)" : "My Rap"
                 
-                // if textfield is empty, set title to default name
-                
-                if textField.text! == "" {
-                    filename = "My Rap.m4a"
-                }
-                
-                var outputFilepath = RecordingService.shared.finishedDirectory.appendingPathComponent(filename)
+                var outputFilepath = RecordingService.shared.finishedDirectory.appendingPathComponent(filename).appendingPathExtension("m4a")
                 
                 while FileManager.default.fileExists(atPath: outputFilepath.path) {
                     
                     // if filename is already taken, add suffix (1) to it. if that is taken, then
                     
-                    filename = "\(textField.text!)\(i).m4a"
-                    if textField.text! == "" {
-                        filename = "\(filename) \(i).m4a"
-                    }
+                    filename = i > 1 ? filename.replacingOccurrences(of: "\(i-1)", with: "\(i)") : "\(filename) \(i)"
                     
-                    outputFilepath = RecordingService.shared.finishedDirectory.appendingPathComponent(filename)
+                    outputFilepath = RecordingService.shared.finishedDirectory.appendingPathComponent(filename).appendingPathExtension("m4a")
                     i += 1
                     
                 }
@@ -230,11 +219,7 @@ class FirstViewController: UIViewController, MeterDelegate {
                 
                 textField.text = ""
                 
-                let endIndex = filename.index(filename.endIndex, offsetBy: -4)
-                
-                let prettyFilename = String(filename[..<endIndex])
-                
-                RecordingService.shared.finishRecording(outputFilepath, prettyFilename) {
+                RecordingService.shared.finishRecording(outputFilepath, filename) {
                     success in
                     
                     print(outputFilepath.absoluteString)
@@ -262,6 +247,17 @@ class FirstViewController: UIViewController, MeterDelegate {
         
         alertController.addAction(cancelAction)
         alertController.addAction(saveAction)
+        
+    }
+    
+    /******************
+    * RecordingSession
+    ******************/
+    
+    func setupRecordingSession() {
+        
+        RecordingService.shared.setSessionAndRecord()
+        RecordingService.shared.delegate = self
         
     }
     

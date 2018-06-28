@@ -21,16 +21,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        tableView.backgroundColor = .lightGray
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(RecordingTableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.rowHeight = 100
-        
-        tableView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height*0.5)
-        
-        view.addSubview(tableView)
+        setupUI()
         
     }
     
@@ -38,6 +29,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidAppear(animated)
         
         self.getRecordings()
+        layoutUI()
         
     }
 
@@ -46,7 +38,24 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Dispose of any resources that can be recreated.
     }
 
+    func setupUI() {
+        
+        self.view.backgroundColor = .white
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(RecordingTableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.rowHeight = 100
+        
+        view.addSubview(tableView)
+        
+    }
     
+    func layoutUI() {
+        
+        tableView.frame = CGRect(x: 0, y: 20, width: view.bounds.width, height: view.bounds.height-20)
+        
+    }
     
     private func getRecordings() {
         
