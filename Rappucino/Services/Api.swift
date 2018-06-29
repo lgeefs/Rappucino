@@ -15,6 +15,7 @@ fileprivate struct Path {
     static let upload = domain?.appendingPathComponent("upload_recording").appendingPathExtension("php")
     static let create_squad = domain?.appendingPathComponent("create_squad").appendingPathExtension("php")
     static let get_squads = domain?.appendingPathComponent("get_squads").appendingPathExtension("php")
+    static let get_rappers = domain?.appendingPathComponent("get_rappers").appendingPathExtension("php")
     static let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     static let home_dir = documentsDirectory.appendingPathComponent("finishedfiles")
 }
@@ -282,44 +283,72 @@ class Api: NSObject, URLSessionDelegate {
                 
                 //print(object)
                 
-                if object != nil {
+                if let obj = object! as? [[String: Any]] {
                     
-                    if let obj = object! as? [[String: Any]] {
+                    var squads = [Squad]()
+                    
+                    for o in obj {
                         
-                        var squads = [Squad]()
-                        
-                        for o in obj {
-                            
-                            var rappers = [Rapper]()
-                            
-                            for r in (o["rappers"] as? [[String: Any]])! {
-                                guard let id = r["id"] as? String,
-                                    let name = r["name"] as? String,
-                                    let handle = r["handle"] as? String,
-                                    let picture_url = r["picture_url"] as? String else {
-                                    break
-                                }
-                                let rapper = Rapper(id: id, name: name, handle: handle, picture_url: URL(string: picture_url)!)
-                                rappers.append(rapper)
-                            }
-                            
-                            guard let name = o["name"] as? String,
-                                let picture_url = o["picture_url"] as? String else {
-                                break
-                            }
-                            
-                            let squad = Squad(rappers: rappers, name: name, picture_url: URL(string: picture_url))
-                            squads.append(squad)
-                            
+                        guard let id = o["id"] as? String,
+                            let name = o["name"] as? String,
+                            let picture_url = o["picture_url"] as? String else {
+                            break
                         }
                         
-                        completion(squads)
-                        
-                    } else {
-                        
-                        completion(nil)
+                        let squad = Squad(id: id, name: name, picture_url: picture_url)
+                        squads.append(squad)
                         
                     }
+                    
+                    completion(squads)
+                    
+                } else {
+                    
+                    completion(nil)
+                    
+                }
+                
+            }
+            
+        } else {
+            completion(nil)
+        }
+        
+    }
+    
+    func get_rappers(query: String, completion: @escaping (_ rappers: [Rapper]?) -> Void) {
+        
+        if let url = Path.get_rappers {
+            
+            guard let rapper_id = UserDefaults.standard.value(forKey: "rapper_id") as? String else {
+                completion(nil)
+                return
+            }
+            
+            let request = createGetRequest(path: url, json: "rapper_id=\(rapper_id)&query=\(query)")
+            
+            dataTask(request) {
+                object in
+                
+                if let obj = object! as? [String: Any] {
+                    
+                    var rappers = [Rapper]()
+                    
+                    for o in obj["rappers"] as! [[String: Any]] {
+                        
+                        guard let id = o["id"] as? String,
+                            let name = o["name"] as? String,
+                            let handle = o["handle"] as? String,
+                            let picture_url = o["picture_url"] as? String else {
+                                break
+                        }
+                        
+                        let rapper = Rapper(id: id, name: name, handle: handle, picture_url: picture_url)
+                        rappers.append(rapper)
+                        
+                    }
+                    
+                    completion(rappers)
                     
                 } else {
                     

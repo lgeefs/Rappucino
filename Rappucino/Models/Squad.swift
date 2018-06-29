@@ -10,15 +10,20 @@ import Foundation
 
 class Squad {
     
+    private var id: String!
     private var name: String!
     private var rappers: [Rapper]!
     private var picture_url: URL?
     private var last_update: (String, String)?
     
-    init(rappers: [Rapper], name: String, picture_url: URL?) {
-        self.rappers = rappers
+    init(id: String, name: String, picture_url: String) {
+        self.id = id
         self.name = name
-        self.picture_url = picture_url
+        self.picture_url = URL(string: picture_url) ?? nil
+    }
+    
+    func getId() -> String {
+        return self.id
     }
     
     func addRapper(rapper: Rapper) {
